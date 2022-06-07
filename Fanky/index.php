@@ -5,20 +5,29 @@
     <title>Belajar PHP - Tampilkan Data Identitas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-
 <body>
 
     <div class="container">
-        <a href="tambah.php" class="mt-3 mb-3 btn btn-outline-success containet-fluid Layanan pt-1 pb-1 ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-            </svg>
-            TAMBAH IDENTITAS
-        </a>
-
+        
+        <?php
+            session_start();
+            if(isset($_SESSION['username'])){
+                echo "Selamat Datang " . $_SESSION['username'];
+                echo "<a href='logout.php'> Logout</a>";
+            }
+        ?>
         <div class="row">
             <div class="col-md-8">
+                <span class="d-flex justify-content-end">
+                    <a href="tambah.php" class="mt-3 mb-3 btn btn-outline-success containet-fluid Layanan pt-1 pb-1 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                        TAMBAH IDENTITAS
+                    </a>
+                </span>
+
                 <table class="table">
                     <thead>
                         <tr>
